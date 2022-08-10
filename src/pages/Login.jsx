@@ -9,18 +9,36 @@ import {
   MDBIcon,
   MDBSpinner
 } from "mdb-react-ui-kit";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux"
+import {toast} from "react-toastify";
+import { login } from "../redux/features/authSlice";
+
 const initialState = {
   email: "",
   password: "",
 }
-
 const Login = () => {
+  //state variables and functions
   const [formValue, setFormValue] = useState(initialState);
+  const {loading, error} = useSelector((state) => ({...state.auth}))
   const {email, password} = formValue;
+  //hooks initialized to variables
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  //side effect to handle error for login
+  useEffect(() => {
+    error && toast.error(error);
+  }, [error])
+
+  //form functions
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(email && password) {
+      //brings in info where email and password are stored
+      dispatch(login({formValue, navigate, toast }));
+    }
   }
   const onChange = (e) => {
     let {name, value} = e.target;
@@ -49,8 +67,7 @@ const Login = () => {
                   name="email"
                   onChange={onChange}
                   required
-                  onInvalid
-                  validation="Please provide email"
+                  Invalid
                 />
               </div>
               <div className="col-md-12">
@@ -61,12 +78,19 @@ const Login = () => {
                   name="password"
                   onChange={onChange}
                   required
-                  onInvalid
-                  validation="Please provide password"
+                  Invalid
                 />
               </div>
               <div className="col-12">
                 <MDBBtn style={{width: "100%"}} className="mt-2">
+                  {loading && (
+                    <MDBSpinner
+                    size="sm"
+                    role="status"
+                    tag="span"
+                    className="me-2"
+                  />
+                  )}
                   Login
                 </MDBBtn>
               </div>
