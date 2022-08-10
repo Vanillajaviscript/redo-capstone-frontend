@@ -20,6 +20,8 @@ import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [show, setShow] = useState(false);
+  //allows conditional for visible logout if user is logged in
+  const {user} = useSelector((state) => ({...state.auth}));
   return (
    <MDBNavbar fixed="top" expand="lg" style={{backgroundColor: "#6e80a4"}}>
     <MDBContainer>
@@ -41,7 +43,9 @@ const NavBar = () => {
               <p className="navbar-text">Home</p>
             </MDBNavbarLink>
           </MDBNavbarItem>
-          <MDBNavbarItem>
+          {user?.result?._id && (
+            <>
+            <MDBNavbarItem>
             <MDBNavbarLink href="/adddog">
               <p className="navbar-text">Add Dog</p>
             </MDBNavbarLink>
@@ -51,16 +55,21 @@ const NavBar = () => {
               <p className="navbar-text">Dashboard</p>
             </MDBNavbarLink>
           </MDBNavbarItem>
+            </>
+          )}
+          {user?.result?._id ? (
           <MDBNavbarItem>
             <MDBNavbarLink href="/login">
               <p className="navbar-text">Logout</p>
             </MDBNavbarLink>
-          </MDBNavbarItem>
-          <MDBNavbarItem>
-            <MDBNavbarLink href="/login">
-              <p className="navbar-text">Login</p>
-            </MDBNavbarLink>
-          </MDBNavbarItem>
+          </MDBNavbarItem> 
+          ) : (
+        <MDBNavbarItem>
+          <MDBNavbarLink href="/login">
+            <p className="navbar-text">Login</p>
+          </MDBNavbarLink>
+        </MDBNavbarItem>
+          )}
         </MDBNavbarNav>
       </MDBCollapse>
     </MDBContainer>
