@@ -9,7 +9,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import {getDogs} from "../redux/features/dogSlice";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import CardDog from "../components/CardDog";
 
 
 const Home = () => {
@@ -41,7 +41,7 @@ const Home = () => {
             <MDBContainer>
               <MDBRow className="row-cols-1 row-cols-md-3 g-2">
                 {dogs && dogs.map((item, index) => (
-                  <h2>dog card</h2>
+                  <CardDog key={index} {...item}/>
                 ))};
               </MDBRow>
             </MDBContainer>
