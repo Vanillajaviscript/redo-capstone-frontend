@@ -16,4 +16,4 @@ export const signUp = (formData) => API.post("/users/signup", formData);
 export const googleSignIn = (result) => API.post("/users/googleSignIn", result);
 
 export const createDog = (dogData) => API.post("/dog", dogData)
-export const getDogs = () => API.post("/dog")
+export const getDogs = () => API.get("/dog")
