@@ -20,6 +20,11 @@ import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(setLogout())
+  };
   //allows conditional for visible logout if user is logged in
   const {user} = useSelector((state) => ({...state.auth}));
   return (
@@ -38,6 +43,9 @@ const NavBar = () => {
       </MDBNavbarToggler>
       <MDBCollapse show={show} navbar>
         <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
+          {user?.result?._id && (
+            <h5 style={{marginRight: "60px", marginTop: "20px"}}>Welcome, {user?.result?.name}</h5>
+          )}
           <MDBNavbarItem>
             <MDBNavbarLink href="/">
               <p className="navbar-text">Home</p>
@@ -60,7 +68,7 @@ const NavBar = () => {
           {user?.result?._id ? (
           <MDBNavbarItem>
             <MDBNavbarLink href="/login">
-              <p className="navbar-text">Logout</p>
+              <p className="navbar-text" onClick={handleLogout}>Logout</p>
             </MDBNavbarLink>
           </MDBNavbarItem> 
           ) : (
