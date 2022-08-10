@@ -49,21 +49,21 @@ const authSlice = createSlice({
     error: "",
     loading: false,
   },
-  // reducers: {
-  //   setUser: (state, action) => {
-  //     state.user = action.payload;
-  //   },
-  //   setProfile: (state, action) => {
-  //     state.user.result = action.payload;
-  //     let localStorageResult = JSON.parse(localStorage.getItem("profile"));
-  //     localStorageResult.result = action.payload;
-  //     localStorage.setItem("profile", JSON.stringify(localStorageResult));
-  //   },
-  //   setLogout: (state, action) => {
-  //     localStorage.clear();
-  //     state.user = null;
-  //   },
-  // },
+  reducers: {
+    setUser: (state, action) => {
+      state.user = action.payload;
+    },
+    setProfile: (state, action) => {
+      state.user.result = action.payload;
+      let localStorageResult = JSON.parse(localStorage.getItem("profile"));
+      localStorageResult.result = action.payload;
+      localStorage.setItem("profile", JSON.stringify(localStorageResult));
+    },
+    setLogout: (state, action) => {
+      localStorage.clear();
+      state.user = null;
+    },
+  },
   extraReducers: {
     [login.pending]: (state, action) => {
       state.loading = true;
