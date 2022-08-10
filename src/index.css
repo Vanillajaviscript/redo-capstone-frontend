@@ -10,3 +10,9 @@ code {
     monospace;
 }
 
+.navbar-text {
+  color: #0d0f12;
+  font-weight: 500;
+  margin-top: 7px;
+  font-size: 17px;
+}
