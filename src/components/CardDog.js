@@ -87,7 +87,7 @@ const CardDog = ({
           <MDBCardTitle className="text-start">{title}</MDBCardTitle>
           <MDBCardText className="text-start">
             {excerpt(description)}
-            <Link to={`/dog/${_id}`}>Read More</Link>
+            <Link to={`/dog/${_id}`}> See more...</Link>
           </MDBCardText>
         </MDBCardBody>
       </MDBCard>

@@ -10,6 +10,7 @@ import {useDispatch} from "react-redux";
 import {useEffect} from "react"
 import {setUser, setLogout} from "./redux/features/authSlice";
 import AddEditDog from './pages/AddEditDog';
+import SingleDog from './pages/SingleDog';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ function App() {
       <Route path="/register" element={<Register />}>Signup</Route>
       <Route path="/adddog" element={<AddEditDog />} />
       <Route path="/editdog/:id" element={<AddEditDog />} />
+      <Route path="/dog/:id" element={<SingleDog />} />
       
     </Routes>
     </div>

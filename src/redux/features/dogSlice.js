@@ -26,6 +26,17 @@ export const getDogs = createAsyncThunk(
     }
   }
 );
+export const getDog = createAsyncThunk(
+  "dog/getDog",
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await api.getDog(id);
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
 const dogSlice = createSlice({
   name: "dog",
   initialState: {
@@ -55,6 +66,17 @@ const dogSlice = createSlice({
       state.dogs = action.payload;
     },
     [getDogs.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
+    [getDog.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [getDog.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.dog = action.payload;
+    },
+    [getDog.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },
