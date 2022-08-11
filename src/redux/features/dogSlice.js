@@ -76,6 +76,17 @@ export const updateDog = createAsyncThunk(
     }
   }
 );
+export const searchDogs = createAsyncThunk(
+  "dog/searchDogs",
+  async (searchQuery , { rejectWithValue }) => {
+    try {
+      const response = await api.getDogsBySearch(searchQuery);
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
 
 
 const dogSlice = createSlice({
@@ -167,6 +178,17 @@ const dogSlice = createSlice({
       }
     },
     [updateDog.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
+    [searchDogs.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [searchDogs.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.dogs = action.payload;
+    },
+    [searchDogs.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },

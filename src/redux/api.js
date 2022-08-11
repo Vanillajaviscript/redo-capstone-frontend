@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const API = axios.create({baseURL: "http://localhost:3001"});
+
+
+const API = axios.create({baseURL: "https://dog-rescue-adoption.herokuapp.com/"})
+
 
 API.interceptors.request.use((req) => {
   if(localStorage.getItem("profile")) {
@@ -21,3 +24,4 @@ export const updateDog = (updatedDogData, id) =>
   API.patch(`/dog/${id}`, updatedDogData);
 export const getDogsByUser = (userId) => API.get(`/dog/userdogs/${userId}`);
 export const deleteDog = (id) => API.delete(`/dog/${id}`);
+export const getDogsBySearch = (searchQuery) => API.get(`/dog/search?searchQuery=${searchQuery}`);

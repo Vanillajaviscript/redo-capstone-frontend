@@ -28,6 +28,10 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+
+  //env variables for google client id for local and production
+  const clientId = "19320938948-bfrh0c1vm3i0rmi0802m4q11rlkkvngb.apps.googleusercontent.com";
+
   //side effect to handle error for login
   useEffect(() => {
     error && toast.error(error);
@@ -109,7 +113,7 @@ const Login = () => {
             <br />
           <GoogleLogin
           //google secret key - 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
-            clientId="19320938948-9gcj4ta21va6pq97928vke0sqhe7ckdp.apps.googleusercontent.com"
+            clientId={clientId}
             render={(renderProps) => (
               <MDBBtn
                 style={{ width: "100%" }}

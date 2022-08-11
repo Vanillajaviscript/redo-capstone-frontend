@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   MDBNavbar,
   MDBContainer,
@@ -7,20 +7,31 @@ import {
   MDBNavbarItem,
   MDBNavbarToggler,
   MDBCollapse,
-  MDBBadge,
-  MDBBtn,
   MDBNavbarBrand,
   MDBNavbarLink
 } from "mdb-react-ui-kit";
 import { useSelector, useDispatch } from "react-redux";
 import { setLogout } from "../redux/features/authSlice";
 import { useNavigate } from "react-router-dom";
-
+import { searchDogs } from "../redux/features/dogSlice";
 
 
 const NavBar = () => {
   const [show, setShow] = useState(false);
+  const [search, setSearch] = useState("")
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(search) {
+      dispatch(searchDogs(search));
+      navigate(`/dogs/search?searchQuery=${search}`);
+      setSearch("");
+    } else {
+      navigate("/");
+    }
+  };
 
   const handleLogout = () => {
     dispatch(setLogout())
@@ -44,7 +55,7 @@ const NavBar = () => {
       <MDBCollapse show={show} navbar>
         <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
           {user?.result?._id && (
-            <h5 style={{marginRight: "60px", marginTop: "20px"}}>Welcome, {user?.result?.name}</h5>
+            <h5 style={{marginRight: "60px", marginTop: "30px"}}>Welcome, {user?.result?.name}</h5>
           )}
           <MDBNavbarItem>
             <MDBNavbarLink href="/">
@@ -79,6 +90,17 @@ const NavBar = () => {
         </MDBNavbarItem>
           )}
         </MDBNavbarNav>
+        <form className="d-flex input-group w-auto" onSubmit={handleSubmit}>
+          <input 
+            type="text" 
+            className="form-control" 
+            placeholder="Search Dogs" 
+            value={search} 
+            onChange={(e) => setSearch(e.target.value)} />
+        </form>
+        <div style={{marginTop: "5px", marginLeft: "5px"}}>
+          <MDBIcon fas icon="search" />
+        </div>
       </MDBCollapse>
     </MDBContainer>
    </MDBNavbar>

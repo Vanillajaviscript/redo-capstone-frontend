@@ -8,7 +8,7 @@ import Register from "./pages/Register";
 import NavBar from './components/NavBar';
 import {useDispatch} from "react-redux";
 import {useEffect} from "react"
-import {setUser, setLogout} from "./redux/features/authSlice";
+import {setUser} from "./redux/features/authSlice";
 import AddEditDog from './pages/AddEditDog';
 import SingleDog from './pages/SingleDog';
 import Dashboard from './pages/Dashboard';
@@ -28,9 +28,10 @@ function App() {
       <NavBar />
       <ToastContainer />
     <Routes>
-      <Route path="/" element={<Home />}>Home</Route>
-      <Route path="/login" element={<Login />}>Login</Route>
-      <Route path="/register" element={<Register />}>Signup</Route>
+      <Route path="/" element={<Home />}/>
+      <Route path="/dogs/search" element={<Home />} />
+      <Route path="/login" element={<Login />}/>
+      <Route path="/register" element={<Register />}/>
       <Route path="/adddog" element={
         <AuthorizedRoute>
           <AddEditDog />
@@ -44,7 +45,10 @@ function App() {
         } 
       />
       <Route path="/dog/:id" element={<SingleDog />} />
-      <Route path="/dashboard" element={<AuthorizedRoute><Dashboard /></AuthorizedRoute>} />
+      <Route path="/dashboard" element={
+        <AuthorizedRoute>
+          <Dashboard />
+        </AuthorizedRoute>} />
       <Route path="*" element={<Page404 />}/>
     </Routes>
     </div>

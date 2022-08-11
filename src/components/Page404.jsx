@@ -7,5 +7,5 @@ const Page404 = () => {
       <h1 className="text-center">Page not Found</h1>
     </div>
   )
-}
+};
 export default Page404
