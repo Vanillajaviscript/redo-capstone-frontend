@@ -13,8 +13,9 @@ import {
 } from "mdb-react-ui-kit";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getDogsByUser } from "../redux/features/dogSlice";
+import { getDogsByUser, deleteDog } from "../redux/features/dogSlice";
 import Spinner from "../components/Spinner";
+import {toast} from "react-toastify";
 
 const Dashboard = () => {
   const { user } = useSelector((state) => ({ ...state.auth }));
@@ -38,6 +39,11 @@ const Dashboard = () => {
   if(loading) {
     <Spinner />
   }
+  const handleDelete = (id) => {
+    if(window.confirm("Are you sure you want to remove this dog?")) {
+      dispatch(deleteDog({id, toast}))
+    };
+  };
 
   return (
     <div
@@ -85,6 +91,7 @@ const Dashboard = () => {
                           icon="trash"
                           style={{ color: "#b01500" }}
                           size="lg"
+                          onClick={() => handleDelete(item._id)}
                         />
                       </MDBBtn>
                       <Link to={`/editdog/${item._id}`}>

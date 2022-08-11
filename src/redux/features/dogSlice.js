@@ -39,7 +39,7 @@ export const getDog = createAsyncThunk(
 );
 
 export const getDogsByUser = createAsyncThunk(
-  "dog/getdogsbyuser",
+  "dog/getDogsByUser",
   async (userId, { rejectWithValue }) => {
     try {
       const response = await api.getDogsByUser(userId);
@@ -49,6 +49,20 @@ export const getDogsByUser = createAsyncThunk(
     }
   }
 );
+
+export const deleteDog = createAsyncThunk(
+  "dog/deleteDog",
+  async ({ id, toast }, { rejectWithValue }) => {
+    try {
+      const response = await api.deleteDog(id);
+      toast.success("Dog Deleted Successfully");
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
 const dogSlice = createSlice({
   name: "dog",
   initialState: {
@@ -100,6 +114,22 @@ const dogSlice = createSlice({
       state.userDogs = action.payload;
     },
     [getDogsByUser.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
+    [deleteDog.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [deleteDog.fulfilled]: (state, action) => {
+      state.loading = false;
+      console.log("action", action)
+      const {arg: {id}} = action.meta;
+      if(id) {
+        state.userDogs = state.userDogs.filter((item) => item._id !== id);
+        state.dogs = state.dogs.filter((item) => item._id !== id);
+      }
+    },
+    [deleteDog.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },
