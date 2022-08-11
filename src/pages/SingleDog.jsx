@@ -34,7 +34,7 @@ const SingleDog = () => {
             position="top"
             style={{ width: "100%", maxHeight: "600px" }}
             src={dog.imageFile}
-            alt={dog.title}
+            alt={dog.dogName}
           />
           <MDBCardBody>
             <MDBBtn
@@ -50,7 +50,7 @@ const SingleDog = () => {
                 style={{ float: "left" }}
               />
             </MDBBtn>
-            <h3>{dog.title}</h3>
+            <h3>{dog.dogName}</h3>
             <span>
               <p className="text-start dogName">Created By: {dog.name}</p>
             </span>

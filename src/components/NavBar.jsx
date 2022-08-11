@@ -31,7 +31,7 @@ const NavBar = () => {
    <MDBNavbar fixed="top" expand="lg" style={{backgroundColor: "#6e80a4"}}>
     <MDBContainer>
       <MDBNavbarBrand href="/" style={{color: "#0d0f12", fontWeight: "600", fontSize: "22px"}}>
-        Farm Sanctuary
+        Dog Rescue
       </MDBNavbarBrand>
       <MDBNavbarToggler
         type="button"
