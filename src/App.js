@@ -13,6 +13,7 @@ import AddEditDog from './pages/AddEditDog';
 import SingleDog from './pages/SingleDog';
 import Dashboard from './pages/Dashboard';
 import AuthorizedRoute from './components/AuthorizedRoute';
+import Page404 from './components/Page404';
 
 function App() {
   const dispatch = useDispatch();
@@ -43,8 +44,8 @@ function App() {
         } 
       />
       <Route path="/dog/:id" element={<SingleDog />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      
+      <Route path="/dashboard" element={<AuthorizedRoute><Dashboard /></AuthorizedRoute>} />
+      <Route path="*" element={<Page404 />}/>
     </Routes>
     </div>
   </Router>
