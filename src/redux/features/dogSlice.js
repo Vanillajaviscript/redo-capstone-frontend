@@ -39,10 +39,10 @@ export const getDog = createAsyncThunk(
 );
 
 export const getDogsByUser = createAsyncThunk(
-  "dog/getDogByUser",
+  "dog/getdogsbyuser",
   async (userId, { rejectWithValue }) => {
     try {
-      const response = await api.getDog(userId);
+      const response = await api.getDogsByUser(userId);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response.data);
