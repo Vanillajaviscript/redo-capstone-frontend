@@ -53,8 +53,7 @@ const AddEditDog = () => {
     }
     if (dogName && description && tags) {
       const updatedDogData = { ...dogData, name: user?.result?.name };
-
-      if (!id) {
+    if (!id) {
         dispatch(createDog({ updatedDogData, navigate, toast }));
       } else {
         dispatch(updateDog({ id, updatedDogData, toast, navigate }));
@@ -62,7 +61,7 @@ const AddEditDog = () => {
       handleClear();
     }
   };
-  const onInputChange = (e) => {
+  const onChange = (e) => {
     const { name, value } = e.target;
     setDogData({ ...dogData, [name]: value });
   };
@@ -101,23 +100,20 @@ const AddEditDog = () => {
                 type="text"
                 value={dogName || ""}
                 name="dogName"
-                onChange={onInputChange}
+                onChange={onChange}
                 className="form-control"
-                required
-                invalid
+                required      
               />
             </div>
             <div className="col-md-12">
-              <MDBInput
+              <textarea
                 placeholder="Enter Description"
                 type="text"
                 value={description}
                 name="description"
-                onChange={onInputChange}
+                onChange={onChange}
                 className="form-control"
                 required
-                invalid
-                textarea
                 rows={4}
               />
             </div>
