@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   MDBBtn,
   MDBCol,
@@ -8,7 +8,7 @@ import {
 } from "mdb-react-ui-kit";
 import { useDispatch, useSelector } from "react-redux";
 import {getDogs} from "../redux/features/dogSlice";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CardDog from "../components/CardDog";
 import Spinner from "../components/Spinner";
 
@@ -34,9 +34,7 @@ const Home = () => {
         <MDBRow className="mt-5">
           {dogs.length === 0 && (
             <MDBTypography className="text-center mb-0" tags="h2">
-              <hr />
               loading
-              <hr />
               <Spinner />
             </MDBTypography>
           )}
