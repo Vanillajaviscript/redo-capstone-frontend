@@ -11,6 +11,7 @@ import {useEffect} from "react"
 import {setUser, setLogout} from "./redux/features/authSlice";
 import AddEditDog from './pages/AddEditDog';
 import SingleDog from './pages/SingleDog';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ function App() {
       <Route path="/adddog" element={<AddEditDog />} />
       <Route path="/editdog/:id" element={<AddEditDog />} />
       <Route path="/dog/:id" element={<SingleDog />} />
+      <Route path="/dashboard" element={<Dashboard />} />
       
     </Routes>
     </div>
