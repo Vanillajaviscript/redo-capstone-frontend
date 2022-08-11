@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createDog } from "../redux/features/dogSlice";
 
 const initialState = {
+  title: "",
   name: "",
   description: "",
   tags: [],
@@ -29,7 +30,7 @@ const AddEditDog = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { name, description, tags} = dogData;
+  const { name, title, description, tags} = dogData;
   const { id } = useParams();
 
   useEffect(() => {
@@ -49,7 +50,7 @@ const AddEditDog = () => {
     if (!tags.length) {
       setTagErrMsg("Please provide some tags");
     }
-    if (name && description && tags) {
+    if (name && title && description && tags) {
       const updatedDogData = { ...dogData, name: user?.result?.name };
 
       if (!id) {
@@ -76,7 +77,7 @@ const AddEditDog = () => {
     });
   };
   const handleClear = () => {
-    setDogData({ name: "", description: "", tags: [] });
+    setDogData({ title: "", name: "", description: "", tags: [] });
   };
 
   return (
@@ -94,6 +95,18 @@ const AddEditDog = () => {
         <h5>{id ? "Update Dog" : "Add Dog"}</h5>
         <MDBCardBody>
           <MDBValidation onSubmit={handleSubmit} className="row g-3" noValidate>
+            <div className="col-md-12">
+            <MDBInput
+                placeholder="Enter Title"
+                type="text"
+                value={title || ""}
+                name="title"
+                onChange={onChange}
+                className="form-control"
+                required
+                invalid
+              />
+            </div>
             <div className="col-md-12">
               <MDBInput
                 placeholder="Enter Name"
