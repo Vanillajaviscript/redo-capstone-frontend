@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {getDogs} from "../redux/features/dogSlice";
 import { useLocation, useNavigate } from "react-router-dom";
 import CardDog from "../components/CardDog";
-
+import Spinner from "../components/Spinner";
 
 const Home = () => {
   const {dogs, loading} = useSelector((state) => ({...state.dog}));
@@ -21,7 +21,7 @@ const Home = () => {
   }, []);
 
   if(loading) {
-    <h2>Loading...</h2>
+    <Spinner />
   }
   return (
     <div
@@ -34,7 +34,10 @@ const Home = () => {
         <MDBRow className="mt-5">
           {dogs.length === 0 && (
             <MDBTypography className="text-center mb-0" tags="h2">
-              No Dogs Found
+              <hr />
+              loading
+              <hr />
+              <Spinner />
             </MDBTypography>
           )}
           <MDBCol>

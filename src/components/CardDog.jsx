@@ -16,7 +16,7 @@ import { useSelector, useDispatch } from "react-redux";
 const CardDog = ({
   imageFile,
   description,
-  title,
+  dogName,
   tags,
   _id,
   name,
@@ -42,7 +42,7 @@ const CardDog = ({
           {likes.length > 2 ? (
             <MDBTooltip
               tag="span"
-              title={`You and ${likes.length - 1} other people likes`}
+              dogName={`You and ${likes.length - 1} other people likes`}
             >
               {likes.length} Likes
             </MDBTooltip>
@@ -70,7 +70,7 @@ const CardDog = ({
       <MDBCard className="h-100 mt-2 d-sm-flex" style={{ maxWidth: "20rem" }}>
         <MDBCardImage
           src={imageFile}
-          alt={title}
+          alt={dogName}
           position="top"
           style={{ maxWidth: "100%", height: "180px" }}
         />
@@ -84,7 +84,7 @@ const CardDog = ({
           ))}
         </span>
         <MDBCardBody>
-          <MDBCardTitle className="text-start">{title}</MDBCardTitle>
+          <MDBCardTitle className="text-start">{dogName}</MDBCardTitle>
           <MDBCardText className="text-start">
             {excerpt(description)}
             <Link to={`/dog/${_id}`}> See more...</Link>

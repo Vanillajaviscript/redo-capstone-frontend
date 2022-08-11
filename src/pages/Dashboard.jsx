@@ -14,10 +14,11 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getDogsByUser } from "../redux/features/dogSlice";
+import Spinner from "../components/Spinner";
 
 const Dashboard = () => {
   const { user } = useSelector((state) => ({ ...state.auth }));
-  const { userDogs} = useSelector((state) => ({ ...state.dog }));
+  const { userDogs, loading} = useSelector((state) => ({ ...state.dog }));
   const userId = user?.result?._id;
   const dispatch = useDispatch();
 
@@ -34,7 +35,9 @@ const Dashboard = () => {
     return str;
   };
 
- 
+  if(loading) {
+    <Spinner />
+  }
 
   return (
     <div

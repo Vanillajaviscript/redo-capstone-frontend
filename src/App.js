@@ -12,6 +12,7 @@ import {setUser, setLogout} from "./redux/features/authSlice";
 import AddEditDog from './pages/AddEditDog';
 import SingleDog from './pages/SingleDog';
 import Dashboard from './pages/Dashboard';
+import AuthorizedRoute from './components/AuthorizedRoute';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,8 +30,18 @@ function App() {
       <Route path="/" element={<Home />}>Home</Route>
       <Route path="/login" element={<Login />}>Login</Route>
       <Route path="/register" element={<Register />}>Signup</Route>
-      <Route path="/adddog" element={<AddEditDog />} />
-      <Route path="/editdog/:id" element={<AddEditDog />} />
+      <Route path="/adddog" element={
+        <AuthorizedRoute>
+          <AddEditDog />
+        </AuthorizedRoute>
+        } 
+      />
+      <Route path="/editdog/:id" element={
+        <AuthorizedRoute>
+          <AddEditDog />
+        </AuthorizedRoute>
+        } 
+      />
       <Route path="/dog/:id" element={<SingleDog />} />
       <Route path="/dashboard" element={<Dashboard />} />
       
