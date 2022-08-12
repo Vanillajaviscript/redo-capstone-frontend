@@ -8,7 +8,8 @@ import {
   MDBNavbarToggler,
   MDBCollapse,
   MDBNavbarBrand,
-  MDBNavbarLink
+  MDBNavbarLink,
+  MDBBtn
 } from "mdb-react-ui-kit";
 import { useSelector, useDispatch } from "react-redux";
 import { setLogout } from "../redux/features/authSlice";
@@ -92,17 +93,20 @@ const NavBar = () => {
         </MDBNavbarItem>
           )}
         </MDBNavbarNav>
+      
         <form className="d-flex input-group w-auto" onSubmit={handleSubmit}>
           <input 
             type="text" 
             className="form-control" 
-            placeholder="Search Dogs" 
+            placeholder="Search Dog Name" 
             value={search} 
             onChange={(e) => setSearch(e.target.value)} />
+          <div style={{marginTop: "1px", marginLeft: "5px"}}>
+            <MDBBtn>
+              <MDBIcon fas icon="search" />
+            </MDBBtn>
+          </div>
         </form>
-        <div style={{marginTop: "5px", marginLeft: "5px"}}>
-          <MDBIcon fas icon="search" />
-        </div>
       </MDBCollapse>
     </MDBContainer>
    </MDBNavbar>

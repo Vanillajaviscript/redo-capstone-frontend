@@ -32,11 +32,11 @@ const Carousel = () => {
         <MDBCarouselItem>
           <MDBCarouselElement src='https://wallup.net/wp-content/uploads/2018/10/07/2390-dog-neck-belt.jpg' alt='dog looking pensive' />
         </MDBCarouselItem>
-        <MDBCarouselCaption>
+      </MDBCarouselInner>
+      <MDBCarouselCaption>
             <h1 style={{color: "darkgray", textShadow: "2px 2px 2px black"}}>Dr. Barker's Soap</h1>
             <h3 style={{color: "white", textShadow: "2px 2px 2px black"}}>A dog works hard to love his enemy, to help unite all dogkind free, or that being is not yet a dog; so, go the second mile, hold the other cheek brave, not meek! For we're All-One or none! All-One!!</h3>
           </MDBCarouselCaption>
-      </MDBCarouselInner>
     </MDBCarousel>
   );
 }
