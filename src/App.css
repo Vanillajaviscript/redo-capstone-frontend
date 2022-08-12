@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  background: url("https://images.wallpaperscraft.ru/image/single/zolotistyj_retriver_shchenok_lezhit_oshejnik_112710_3840x2400.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 body {
   background-color: "gray";
