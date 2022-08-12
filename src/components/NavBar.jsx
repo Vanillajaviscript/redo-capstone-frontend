@@ -42,7 +42,9 @@ const NavBar = () => {
    <MDBNavbar fixed="top" expand="lg" style={{backgroundColor: "#6e80a4"}}>
     <MDBContainer>
       <MDBNavbarBrand href="/" style={{color: "#0d0f12", fontWeight: "600", fontSize: "22px"}}>
-        Dog Rescue
+        GoldenBond Rescue
+        <MDBIcon icon="dog" className="fa-2x" style={{paddingLeft: "20px"}} />
+        <MDBIcon icon="bone" />
       </MDBNavbarBrand>
       <MDBNavbarToggler
         type="button"
@@ -55,7 +57,7 @@ const NavBar = () => {
       <MDBCollapse show={show} navbar>
         <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
           {user?.result?._id && (
-            <h5 style={{marginRight: "60px", marginTop: "30px"}}>Welcome, {user?.result?.name}</h5>
+            <h5 style={{ marginTop: "30px"}}>Welcome, {user?.result?.name}</h5>
           )}
           <MDBNavbarItem>
             <MDBNavbarLink href="/">

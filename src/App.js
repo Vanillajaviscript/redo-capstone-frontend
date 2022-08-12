@@ -14,6 +14,8 @@ import SingleDog from './pages/SingleDog';
 import Dashboard from './pages/Dashboard';
 import AuthorizedRoute from './components/AuthorizedRoute';
 import Page404 from './components/Page404';
+import Footer  from './components/Footer';
+import Carousel from './components/Carousel';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +29,7 @@ function App() {
     <div className="App">
       <NavBar />
       <ToastContainer />
+      <Carousel />
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/dogs/search" element={<Home />} />
@@ -51,6 +54,7 @@ function App() {
         </AuthorizedRoute>} />
       <Route path="*" element={<Page404 />}/>
     </Routes>
+    <Footer />
     </div>
   </Router>
   );

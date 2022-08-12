@@ -76,6 +76,7 @@ export const updateDog = createAsyncThunk(
     }
   }
 );
+
 export const searchDogs = createAsyncThunk(
   "dog/searchDogs",
   async (searchQuery , { rejectWithValue }) => {

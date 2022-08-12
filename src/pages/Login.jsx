@@ -70,7 +70,7 @@ const Login = () => {
       }}
     >
         <MDBCard alignment="center">
-          <MDBIcon fas icon="user-circle" className="fa-2x" />
+          <MDBIcon fas icon="paw" className="fa-4x" />
           <h5>Sign In</h5>
           <MDBCardBody>
             <MDBValidation onSubmit={handleSubmit} noValidate className="row g-3">

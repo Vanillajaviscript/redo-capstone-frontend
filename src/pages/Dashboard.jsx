@@ -54,7 +54,7 @@ const Dashboard = () => {
         alignContent: "center",
       }}
     >
-      <h4 className="text-center">Logged in as: {user?.result?.name}</h4>
+      <h4 className="text-center">Dogs created by {user?.result?.name}</h4>
       <hr style={{maxWidth: "570px"}}/>
       {userDogs && userDogs.map((item) => (
           <MDBCardGroup key={item._id}>
