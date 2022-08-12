@@ -29,7 +29,6 @@ const Login = () => {
   const dispatch = useDispatch();
 
 
-  //env variables for google client id for local and production
   const clientId = "19320938948-bfrh0c1vm3i0rmi0802m4q11rlkkvngb.apps.googleusercontent.com";
 
   //side effect to handle error for login
