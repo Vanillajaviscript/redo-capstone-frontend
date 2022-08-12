@@ -34,7 +34,7 @@ const CardDog = ({
           position="top"
           style={{ maxWidth: "100%", height: "180px" }}
         />
-        <div className="top-left" style={{color: "black", textShadow: "2px 2px 2px white"}}>{name}</div>
+        <div className="top-left" style={{color: "white", textShadow: "2px 2px 2px black"}}>{name}</div>
         <span className="text-start tag-card">
           {tags.map((tag, index) => (
             <Link key={index} to={`/dogs/tag/${tag}`}>
