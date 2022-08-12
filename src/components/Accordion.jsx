@@ -4,7 +4,7 @@ import { MDBAccordion, MDBAccordionItem } from 'mdb-react-ui-kit';
 export default function App() {
 
   return (
-    <MDBAccordion initialActive={1} style={{marginTop: "60px"}}>
+    <MDBAccordion initialActive={1} style={{marginTop: "60px"}} >
       <MDBAccordionItem collapseId={1} headerTitle='Dog Fact #1'>
         <strong>Approximately 10,000 dogs are slaughtered each year for the “festival”.</strong> During its prime years, circa 2014- 2016, it was estimated that approximately 10,000 dogs were slaughtered every year for the Yulin festival. In 2020, the number dropped to around 3,000 based on local activist’s estimates.
       </MDBAccordionItem>

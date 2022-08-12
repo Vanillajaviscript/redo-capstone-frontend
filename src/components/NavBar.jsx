@@ -103,7 +103,7 @@ const NavBar = () => {
             onChange={(e) => setSearch(e.target.value)} />
           <div style={{marginTop: "1px", marginLeft: "5px"}}>
             <MDBBtn>
-              <MDBIcon fas icon="search" />
+              <MDBIcon rippleColor='light' fas icon="search" />
             </MDBBtn>
           </div>
         </form>
