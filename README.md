@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Dog Adoptions Rescue Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+<img src="https://wallup.net/wp-content/uploads/2015/06/Frienship-is-good.jpg">
 
-## Available Scripts
+---
+## Project Idea
+<br>
 
-In the project directory, you can run:
+Dog Adoption Site:
 
-### `npm start`
+- Create, Read, Update, Delete
+- Authentication using Google and email/password
+- Authorized users can perform CRUD operations on their created dogs only
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### User Stories
+- As a user, I want to:
+  - Create, read, update, and delete a dog post
+  - Register
+  - Be authenticated to perform crud operations
+  - Be authorized to edit or delete my personally created posts
+  - Be able to view aggregate user posts of dogs
 
-### `npm test`
+### Wireframe
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://i.imgur.com/b91rk20.png">
 
-### `npm run build`
+### Models
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```js
+const userSchema = mongoose.Schema({
+      name: {type: String, required: true},
+      email: {type: String, required: true},
+      password: {type: String, required: false},
+      googleId: {type: String, required: false},
+      id: {type: String},
+});
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+const dogSchema = mongoose.Schema({
+  dogName: String,
+  description: String,
+  tags: [String],
+  imageFile: String,
+  creator: String,
+  createdAt: {
+    type: Date,
+    default: new Date(),
+  },
+});
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Libraries/ Technologies/ Database
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Express
+- Node.js
+- Redux
+- Redux toolkit
+- React.js
+- Material Design Bootstrap
+- Bootstrap
+- JWT
+- Google Authentication
+- MongoDB
+- Axios
+- Moment
+- React Google Login
+- React Toastify
+- React Router Dom
+- 
+#### Goal for each day
+<br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Dog Adoptions Rescue | Fri | Sat | Sun | Mon | Tue | Wed
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Goals | Backend | Setup Authentication | Frontend  | Style pages | Add more logic if time allows | Finishing touches|
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Future enhancements
+- Provide ability to like posts
+- Have the user be able to save other posts that they are not authorized to perform CRUD operations on
+- Provide comments to other user's posts
