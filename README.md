@@ -69,7 +69,6 @@ const dogSchema = mongoose.Schema({
 - React Google Login
 - React Toastify
 - React Router Dom
-- 
 #### Goal for each day
 <br>
 
