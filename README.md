@@ -52,23 +52,16 @@ const dogSchema = mongoose.Schema({
 ```
 
 
-### Libraries/ Technologies/ Database
+### Technologies used
 
-- Express
-- Node.js
-- Redux
-- Redux toolkit
-- React.js
-- Material Design Bootstrap
-- Bootstrap
-- JWT
-- Google Authentication
-- MongoDB
-- Axios
-- Moment
-- React Google Login
-- React Toastify
-- React Router Dom
+|   Backend    |     Frontend       |          Styling          |
+| -------------|:------------------:| -------------------------:|
+| MongoDB      | React.js           | Material Design Bootstrap |
+| JWT          | Redux/Redux Toolkit|        Bootstrap          |
+| Node.js      | React Toastify     |           CSS             |
+| Express.js   | Moment             |                           |
+| Axios        | React Router Dom   |                           |
+
 #### Goal for each day
 <br>
 
