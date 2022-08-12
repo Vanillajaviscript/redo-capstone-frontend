@@ -112,7 +112,7 @@ const Login = () => {
             </MDBValidation>
             <br />
           <GoogleLogin
-          //google secret key - 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
+          
             clientId={clientId}
             render={(renderProps) => (
               <MDBBtn
