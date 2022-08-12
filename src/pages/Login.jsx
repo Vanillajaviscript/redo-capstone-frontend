@@ -29,7 +29,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
 
-  const clientId = "19320938948-bfrh0c1vm3i0rmi0802m4q11rlkkvngb.apps.googleusercontent.com";
+  const clientId = "7602334194-ihde7jelhvf8kco749pcfc44q2gq8muj.apps.googleusercontent.com";
 
   //side effect to handle error for login
   useEffect(() => {
@@ -48,6 +48,7 @@ const Login = () => {
     let {name, value} = e.target;
     setFormValue({...formValue, [name]: value})
   }
+  
   const googleSuccess = (resp) => {
     const email = resp?.profileObj?.email;
     const name = resp?.profileObj?.name;
@@ -110,8 +111,7 @@ const Login = () => {
               </div>
             </MDBValidation>
             <br />
-          <GoogleLogin
-          
+            <GoogleLogin
             clientId={clientId}
             render={(renderProps) => (
               <MDBBtn

@@ -101,9 +101,9 @@ const NavBar = () => {
             placeholder="Search Dog Name" 
             value={search} 
             onChange={(e) => setSearch(e.target.value)} />
-          <div style={{marginTop: "1px", marginLeft: "5px"}}>
+          <div style={{marginBottom: "2px", marginTop: "-3px", marginLeft: "5px"}}>
             <MDBBtn>
-              <MDBIcon rippleColor='light' fas icon="search" />
+              <MDBIcon rippleColor='light' fas icon="search" className="fa-2x" />
             </MDBBtn>
           </div>
         </form>
