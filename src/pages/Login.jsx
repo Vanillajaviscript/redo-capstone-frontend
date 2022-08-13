@@ -127,6 +127,7 @@ const Login = () => {
             onSuccess={googleSuccess}
             onFailure={googleFailure}
             cookiePolicy="single_host_origin"
+            isSignedIn={true}
           />
           </MDBCardBody>
           <MDBCardFooter>
