@@ -9,7 +9,10 @@ import {
   MDBCollapse,
   MDBNavbarBrand,
   MDBNavbarLink,
-  MDBBtn
+  MDBBtn,
+  MDBInputGroup,
+  MDBBreadcrumb,
+  MDBBreadcrumbItem
 } from "mdb-react-ui-kit";
 import { useSelector, useDispatch } from "react-redux";
 import { setLogout } from "../redux/features/authSlice";
@@ -40,12 +43,10 @@ const NavBar = () => {
   //allows conditional for visible logout if user is logged in
   const {user} = useSelector((state) => ({...state.auth}));
   return (
-   <MDBNavbar fixed="top" expand="lg" style={{backgroundColor: "#6e80a4"}}>
+   <MDBNavbar fixed="top" expand="lg" style={{backgroundColor: "RGB(168,127,80)"}}>
     <MDBContainer>
       <MDBNavbarBrand href="/" style={{color: "#0d0f12", fontWeight: "600", fontSize: "22px"}}>
-        GoldenBond Rescue
-        <MDBIcon icon="dog" className="fa-2x" style={{paddingLeft: "20px"}} />
-        <MDBIcon icon="bone" />
+      <img style={{width: "10rem"}} src="https://goldenbondrescue.com/wp-content/uploads/2021/11/golden-bond-rescue-logo-horizontal.webp" class="img-fluid" alt="My responsive image."></img>
       </MDBNavbarBrand>
       <MDBNavbarToggler
         type="button"
@@ -58,18 +59,19 @@ const NavBar = () => {
       <MDBCollapse show={show} navbar>
         <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
           {user?.result?._id && (
-            <h5 style={{ marginTop: "30px"}}>Welcome, {user?.result?.name}</h5>
+            <h5 style={{ marginTop: "35px"}}>Welcome, {user?.result?.name}</h5>
           )}
           <MDBNavbarItem>
             <MDBNavbarLink href="/">
-              <p className="navbar-text">Home</p>
+              <p className="navbar-text"><MDBIcon icon="home" className="fa-1x"></MDBIcon></p>
             </MDBNavbarLink>
           </MDBNavbarItem>
+          
           {user?.result?._id && (
             <>
             <MDBNavbarItem>
             <MDBNavbarLink href="/adddog">
-              <p className="navbar-text">Add Dog</p>
+              <p className="navbar-text">Create</p>
             </MDBNavbarLink>
           </MDBNavbarItem>
           <MDBNavbarItem>
@@ -82,31 +84,27 @@ const NavBar = () => {
           {user?.result?._id ? (
           <MDBNavbarItem>
             <MDBNavbarLink href="/login">
-              <p className="navbar-text" onClick={handleLogout}>Logout</p>
+              <p className="navbar-text" onClick={handleLogout}><MDBIcon icon="sign-out-alt" className="fa-1x"></MDBIcon></p>
             </MDBNavbarLink>
           </MDBNavbarItem> 
           ) : (
         <MDBNavbarItem>
           <MDBNavbarLink href="/login">
-            <p className="navbar-text">Login</p>
+            <p className="navbar-text"><MDBIcon icon="sign-in-alt" className="fa-1x"></MDBIcon></p>
           </MDBNavbarLink>
         </MDBNavbarItem>
           )}
         </MDBNavbarNav>
-      
-        <form className="d-flex input-group w-auto" onSubmit={handleSubmit}>
-          <input 
+        <MDBInputGroup tag="form" className='d-flex w-auto mb-0' onSubmit={handleSubmit}>
+        <input
+            style={{marginLeft: "25px"}} 
             type="text" 
             className="form-control" 
             placeholder="Search Dog Name" 
             value={search} 
             onChange={(e) => setSearch(e.target.value)} />
-          <div style={{marginBottom: "2px", marginTop: "-3px", marginLeft: "5px"}}>
-            <MDBBtn>
-              <MDBIcon rippleColor='light' fas icon="search" className="fa-2x" />
-            </MDBBtn>
-          </div>
-        </form>
+          <MDBBtn><MDBIcon rippleColor='light' fas icon="search" /></MDBBtn>
+        </MDBInputGroup>
       </MDBCollapse>
     </MDBContainer>
    </MDBNavbar>

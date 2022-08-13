@@ -69,7 +69,7 @@ const Login = () => {
       marginTop: "120px"
       }}
     >
-        <MDBCard alignment="center">
+        <MDBCard alignment="center" style={{paddingTop: "10px"}}>
           <MDBIcon fas icon="paw" className="fa-4x" />
           <h5>Sign In</h5>
           <MDBCardBody>

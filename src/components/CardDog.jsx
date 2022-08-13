@@ -27,7 +27,7 @@ const CardDog = ({
 
   return (
     <MDBCardGroup>
-      <MDBCard className="h-100 mt-2 d-sm-flex" style={{ maxWidth: "20rem" }}>
+      <MDBCard className=" mt-2 d-sm-flex" style={{ maxWidth: "20rem", backgroundColor: "#ffffffb9", boxShadow: "1px 1px 4px 1px black" }}>
         <MDBCardImage
           src={imageFile}
           alt={dogName}

@@ -5,6 +5,7 @@ import {
   MDBValidation,
   MDBBtn,
   MDBInput,
+  MDBIcon
 } from "mdb-react-ui-kit";
 import ChipInput from "material-ui-chip-input";
 import FileBase from "react-file-base64";
@@ -90,8 +91,8 @@ const AddEditDog = () => {
       }}
       className="container"
     >
-      <MDBCard alignment="center">
-        <h5>{id ? "Update Dog" : "Add Dog"}</h5>
+      <MDBCard alignment="center" style={{paddingTop: "10px"}}>
+        <MDBIcon icon="dog" className="fa-4x" ><h5 style={{fontFamily: "roboto"}}>{id ? "Update Dog" : "Add Dog"}</h5></MDBIcon>
         <MDBCardBody>
           <MDBValidation onSubmit={handleSubmit} className="row g-3" noValidate>
             <div className="col-md-12">

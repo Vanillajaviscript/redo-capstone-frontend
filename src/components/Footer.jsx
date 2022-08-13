@@ -88,9 +88,9 @@ const Footer = () => {
         </section>
       </MDBContainer>
 
-      <div className='text-center p-3' style={{ backgroundColor: 'rgb(131, 146, 237)' }}>
-        © 2022 Copyright: <br />
-        <a className='text-white' href="https://dog-rescue-adoptions.netlify.app/">
+      <div className='text-center p-3' style={{ backgroundColor: 'RGB(168,127,80)' }}>
+        © 2022 Copyright:
+        <a className='text-decoration' href="https://dog-rescue-adoptions.netlify.app/">
            dog-rescue-adoptions.netlify.app/
         </a>
       </div>

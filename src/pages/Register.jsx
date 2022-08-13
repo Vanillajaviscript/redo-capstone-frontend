@@ -56,7 +56,7 @@ const Register = () => {
         marginTop: "120px",
       }}
     >
-      <MDBCard alignment="center">
+      <MDBCard alignment="center" style={{paddingTop: "10px"}}>
         <MDBIcon fas icon="bone" className="fa-4x" />
         <h5>Sign Up</h5>
         <MDBCardBody>

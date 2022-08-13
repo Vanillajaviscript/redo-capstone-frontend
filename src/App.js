@@ -17,6 +17,7 @@ import Page404 from './components/Page404';
 import Footer  from './components/Footer';
 import Carousel from './components/Carousel';
 import Accordion from "./components/Accordion";
+
 function App() {
   const dispatch = useDispatch();
   //allows user to be saved so that it is not lost upon refresh of page. 

@@ -54,11 +54,14 @@ const Dashboard = () => {
         alignContent: "center",
       }}
     >
-      <h4 className="text-center" style={{color: "white"}}>Dogs created by {user?.result?.name}</h4>
-      <hr style={{maxWidth: "570px"}}/>
+            <>
+              <h1 className="text-center" style={{ color: "#ffffff"}}>
+                Dogs created by {user?.result?.name}</h1>
+                <hr style={{ maxWidth: "570px" }} />
+            </>
       {userDogs && userDogs.map((item) => (
           <MDBCardGroup key={item._id}>
-            <MDBCard style={{ maxWidth: "600px" }} className="mt-2">
+            <MDBCard style={{ maxWidth: "600px", color: "black", backgroundColor: "#ffffffb9", boxShadow: "0px 0px 9px 1px black"}} className="mt-2">
               <MDBRow className="g-0">
                 <MDBCol md="4">
                   <MDBCardImage
@@ -73,8 +76,8 @@ const Dashboard = () => {
                     <MDBCardTitle className="text-start">
                       {item.dogName}
                     </MDBCardTitle>
-                    <MDBCardText className="text-start">
-                      <small className="text-muted">
+                    <MDBCardText className="text-start" >
+                      <small className="text-monospace" >
                         {excerpt(item.description)}
                       </small>
                     </MDBCardText>

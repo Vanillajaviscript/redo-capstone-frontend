@@ -40,17 +40,18 @@ const SingleDog = () => {
             <MDBBtn
               tag="a"
               color="none"
-              style={{ float: "left", color: "#000" }}
+              style={{ float: "left", color: "#000000" }}
               onClick={() => navigate("/")}
             >
               <MDBIcon
                 fas
+                className="fa-2x"
                 size="lg"
-                icon="long-arrow-alt-left"
+                icon="hand-point-left"
                 style={{ float: "left" }}
               />
             </MDBBtn>
-            <h3>{dog.dogName}</h3>
+            <h3 className="text-center">{dog.dogName}</h3>
             <span>
               <p className="text-start dogName">Created By: {dog.name}</p>
             </span>
