@@ -3,7 +3,7 @@ import { MDBAccordion, MDBAccordionItem } from 'mdb-react-ui-kit';
 
 const Accordion = () => {
 
- 
+
 
   return (
     <div

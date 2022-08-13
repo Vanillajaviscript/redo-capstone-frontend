@@ -22,7 +22,7 @@ const initialState = {
 const Login = () => {
   //state variables and functions
   const [formValue, setFormValue] = useState(initialState);
-  const {loading, error} = useSelector((state) => ({...state.auth}))
+  const {loading, error} = useSelector((state) => ({...state.auth}));
   const {email, password} = formValue;
   //hooks initialized to variables
   const navigate = useNavigate();
@@ -31,10 +31,11 @@ const Login = () => {
 
   const clientId = "19320938948-66q2rnf10gl3ofl68qd3aafs6ltfei2g.apps.googleusercontent.com";
 
+
   //side effect to handle error for login
   useEffect(() => {
     error && toast.error(error);
-  }, [error])
+  }, [error]);
 
   //form functions
   const handleSubmit = (e) => {
