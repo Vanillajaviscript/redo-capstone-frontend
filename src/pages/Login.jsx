@@ -29,7 +29,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
 
-  const clientId = "7602334194-ihde7jelhvf8kco749pcfc44q2gq8muj.apps.googleusercontent.com";
+  const clientId = "19320938948-66q2rnf10gl3ofl68qd3aafs6ltfei2g.apps.googleusercontent.com";
 
   //side effect to handle error for login
   useEffect(() => {
