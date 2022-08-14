@@ -17,8 +17,24 @@ import Page404 from './components/Page404';
 import Footer  from './components/Footer';
 import Carousel from './components/Carousel';
 import Accordion from "./components/Accordion";
+import { gapi } from "gapi-script";
 
-function App() {
+function App({clientId}) {
+
+  // gapi.load("client:auth2", () => {
+  //   gapi.client.init({
+  //     clientId: clientId,
+  //     plugin_name: "chat",
+  //   });
+  // });
+
+//   window.gapi.load('client:auth2', () => {
+//     window.gapi.client.init({
+//         clientId: clientId,
+//         plugin_name: "chat"
+//     });
+// });
+
   const dispatch = useDispatch();
   //allows user to be saved so that it is not lost upon refresh of page. 
   const user = JSON.parse(localStorage.getItem("profile"));
