@@ -24,7 +24,7 @@ const SingleDog = () => {
     if (id) {
       dispatch(getDog(id));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [id]);
   return (
     <>

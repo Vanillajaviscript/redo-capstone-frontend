@@ -10,13 +10,13 @@ import {
 const Carousel = () => {
   return (
     <div>
-    <div style={{
+    {/* <div style={{
         width: "100vw",
         height: "2em",
         background:"linear-gradient(to top, rgba(7, 4, 1, 0.735), rgba(0, 0, 0, 0.171))"
 
     }} >
-    </div>
+    </div> */}
     <MDBCarousel interval={2500}>
       <MDBCarouselInner>
         <MDBCarouselItem className='active'>

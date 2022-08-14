@@ -6,6 +6,7 @@ import {
   MDBCardText,
   MDBCardImage,
   MDBCardGroup,
+  MDBIcon
 } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 
@@ -26,8 +27,8 @@ const CardDog = ({
   };
 
   return (
-    <MDBCardGroup>
-      <MDBCard className=" mt-2 d-sm-flex" style={{ maxWidth: "20rem", backgroundColor: "#ffffffb9", boxShadow: "1px 1px 4px 1px black" }}>
+    <MDBCardGroup style={{marginTop: "6em"}}>
+      <MDBCard className=" mt-2 d-sm-flex" style={{ maxWidth: "20rem", backgroundColor: "#ffffffad", boxShadow: "1px 1px 4px 1px black" }}>
         <MDBCardImage
           src={imageFile}
           alt={dogName}
@@ -47,7 +48,7 @@ const CardDog = ({
           <MDBCardTitle className="text-start" >{dogName}</MDBCardTitle>
           <MDBCardText className="text-start">
             {excerpt(description)}
-            <Link to={`/dog/${_id}`}> See more...</Link>
+            <Link to={`/dog/${_id}`}> <MDBIcon fas icon="eye"/> <MDBIcon fas icon="eye"/></Link>
           </MDBCardText>
         </MDBCardBody>
       </MDBCard>
