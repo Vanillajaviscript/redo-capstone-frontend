@@ -37,3 +37,29 @@ code {
   margin: 0 0 0 4px;
   font-weight: 500;
 }
+
+
+.tag {
+  list-style: none;
+  display: flex;
+  height: 28px;
+  background-color: rgba(155,155,155,0.08);
+  font-size: 14px;
+  font-weight: 400;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.tag-card {
+  margin: 10px 0 0 20px;
+  color: #806a78;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 0.5rem;
+  animation: fadeIn 700ms ease-in-out 1s both;
+  cursor: pointer;
+  z-index: 1;
+}

@@ -18,6 +18,7 @@ import Footer  from './components/Footer';
 import Carousel from './components/Carousel';
 import Accordion from "./components/Accordion";
 import { gapi } from "gapi-script";
+import ScrollToTop from './components/ScrollToTop';
 
 function App({clientId}) {
 
@@ -47,6 +48,7 @@ function App({clientId}) {
       <NavBar />
       <Accordion />
       <ToastContainer />
+      <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/dogs/search" element={<Home />} />
