@@ -63,3 +63,23 @@ code {
   cursor: pointer;
   z-index: 1;
 }
+
+.container-404 {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered-404 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-center {
+  position: absolute;
+  top: 30px;
+  right: 27%;
+  font-size: 5rem;
+}

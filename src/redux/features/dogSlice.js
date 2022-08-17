@@ -99,6 +99,11 @@ const dogSlice = createSlice({
     error: "",
     loading: false,
   },
+  reducers: {
+    setCurrentPage: (state, action) => {
+      state.currentPage = action.payload;
+    },
+  },
   extraReducers: {
     [createDog.pending]: (state, action) => {
       state.loading = true;

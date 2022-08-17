@@ -8,9 +8,9 @@ import {
 } from "mdb-react-ui-kit";
 import { useDispatch, useSelector } from "react-redux";
 import {getDogs} from "../redux/features/dogSlice";
-import { useNavigate } from "react-router-dom";
 import CardDog from "../components/CardDog";
 import Spinner from "../components/Spinner";
+
 
 const Home = () => {
   const {dogs, loading} = useSelector((state) => ({...state.dog}));
