@@ -16,7 +16,7 @@ Dog Adoption Site:
 ---
 <hr/>
 <hr/>
-### User Stories
+## User Stories
 - As a user, I want to:
   - Create, read, update, and delete a dog post
   - Register
@@ -25,7 +25,7 @@ Dog Adoption Site:
   - Be able to view aggregate user posts of dogs
 <hr/>
 <hr/>
-### Site Images
+## Site Images
 ###### Site hosted on Netlify, visit [GoldenBond Rescue](https://dog-adoptions-rescue.netlify.app/).
 
 Home
