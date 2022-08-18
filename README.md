@@ -16,6 +16,7 @@ Dog Adoption Site:
 ---
 <hr/>
 <hr/>
+
 ## User Stories
 - As a user, I want to:
   - Create, read, update, and delete a dog post
@@ -25,6 +26,7 @@ Dog Adoption Site:
   - Be able to view aggregate user posts of dogs
 <hr/>
 <hr/>
+
 ## Site Images
 ###### Site hosted on Netlify, visit [GoldenBond Rescue](https://dog-adoptions-rescue.netlify.app/).
 
@@ -36,6 +38,7 @@ Login
 
 <hr/>
 <hr/>
+
 ### Wireframe
 
 <img src="https://i.imgur.com/b91rk20.png">
@@ -67,6 +70,7 @@ const dogSchema = mongoose.Schema({
 
 <hr/>
 <hr/>
+
 ### Technologies used
 
 |   Backend    |     Frontend       |          Styling          |
@@ -78,6 +82,7 @@ const dogSchema = mongoose.Schema({
 | Axios        | React Router Dom   |                           |
 <hr/>
 <hr/>
+
 #### Goal for each day
 <br>
 
@@ -86,6 +91,7 @@ const dogSchema = mongoose.Schema({
 | Goals | Backend | Setup Authentication | Frontend  | Style pages | Add more logic if time allows | Finishing touches|
 <hr/>
 <hr/>
+
 #### Future enhancements
 - Provide ability to like posts
 - Have the user be able to save other posts that they are not authorized to perform CRUD operations on
