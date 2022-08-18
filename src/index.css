@@ -39,7 +39,7 @@ code {
 }
 
 
-.tag {
+/* .tag {
   list-style: none;
   display: flex;
   height: 28px;
@@ -48,7 +48,7 @@ code {
   font-weight: 400;
   align-items: center;
   padding: 0 12px;
-}
+} */
 
 .tag-card {
   margin: 10px 0 0 20px;
@@ -70,16 +70,3 @@ code {
   color: white;
 }
 
-.centered-404 {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.top-center {
-  position: absolute;
-  top: 30px;
-  right: 27%;
-  font-size: 5rem;
-}
